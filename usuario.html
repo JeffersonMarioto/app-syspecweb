@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Syspec - Cadastro de usuários</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
+    <link rel="canonical" href="https://html5-templates.com/demo/amp/">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "Webpage",
+  "url": "https://html5-templates.com",
+  "name": "HTML5 Templates",
+  "headline": "Simple AMP HTML5 Template",
+  "description": "A simple AMP HTML5 template with sidebar, social share icons and some demo text.",
+  "author": "html5author",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://html5-templates.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "HTML5 Templates",
+    "logo": {
+      "url": "https://html5-templates.com/images/google-amp.jpg",
+      "width": 300,
+      "height": 200,
+      "@type": "ImageObject"
+    }
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://html5-templates.com/images/og.jpg",
+    "width": 1000,
+    "height": 458
+  }
+  }
+  </script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <style amp-custom>
+body{background-color: #FFFFFF;font-family: Arial, Helvetica, sans-serif;padding: 40px 0 50px;}
+#socialFooter{position:fixed;background: #DDD;bottom: 0;left:0;right:0;padding: 5px 10px 0;text-align:center;z-index:1000;height: 35px;}
+.wrapFB {vertical-align: middle;padding: 4px 9px 0 4px;float: right;}
+#pageWrap {max-width: 500px;margin: auto;padding: 20px;}
+.hamburger {padding: 5px 10px 5px 20px;display: inline-block;font-size: 25px;cursor: pointer;}
+.site-name {display: inline-block;vertical-align: top;font-size: 20px;font-weight: bold;line-height: 45px;}
+.sidebar {padding: 10px;margin: 0;color: #FFF;font-weight:bold;}
+#sidebar1{background: #CE5937;}
+.sidebar > li {list-style: none;margin-bottom:10px;}
+.sidebar a {text-decoration: none;color: #FFF;}
+.close-sidebar {font-size: 1.5em;padding: 5px 15px;cursor: pointer;color: #FFFFFF;}
+.headerbar {background: #CE5937;color: #FFF;line-height: 30px;position: fixed;top: 0;left: 0;right: 0;height: 40px;z-index: 1000;}
+.headerbar a {text-decoration: none;color: #FFF;}
+  </style>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script async custom-element="amp-facebook-like" src="https://cdn.ampproject.org/v0/amp-facebook-like-0.1.js"></script>
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+  </head>
+  <body>
+    <header class="headerbar">
+      <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
+      <a href="index.html">Cadastro de usuários</a>
+    </header>
+    <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
+      <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
+      <ul class="sidebar">
+        <li><a href="cadastro_animais.html">Cadastro de animais</a></li>
+        <li><a href="pesagem.html">Pesagens</a></li>
+        <li><a href="inseminacoes.html">Inseminações</a></li>
+        <li><a href="sanitario.html">Sanitário</a></li>
+        <li><a href="medicacoes.html">Medicações</a></li>
+        <li><a href="minerais_racoes.html">Minerais & Rações</a></li>
+        <li><a href="consultas.html">Consultas</a></li>
+        <li><a href="ajuda.html">Ajuda</a></li>
+        <li><a href="usuario.html">Ajuda</a></li>
+
+      </ul>
+    </amp-sidebar>
+  <!-- Add New User Modal Start -->
+  <div class="modal fade" tabindex="-1" id="addNewUserModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Adicionar Novo Usuário</h5>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="add-user-form" class="p-2" novalidate>
+            <div class="row mb-3 gx-3">
+              <div class="col">
+                <input type="text" name="usuario" class="form-control form-control-lg" placeholder="Entre com usuário" required>
+                <div class="invalid-feedback">Usuário é obrigatório!</div>
+              </div>
+
+              <div class="col">
+                <input type="text" name="senha" class="form-control form-control-lg" placeholder="Entre com a senha" required>
+                <div class="invalid-feedback">Senha é obrigatória!</div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <input type="submit" value="Adicionar" class="btn btn-primary btn-block btn-lg" id="add-user-btn">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Add New User Modal End -->
+
+  <!-- Edit User Modal Start -->
+  <div class="modal fade" tabindex="-1" id="editUserModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Editar Usuário</h5>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <form id="edit-user-form" class="p-2" novalidate>
+            <input type="hidden" name="usuario_id" id="usuario_id">
+            <div class="row mb-3 gx-3">
+              <div class="col">
+                <input type="text" name="usuario" id="usuario" class="form-control form-control-lg" placeholder="Digite o Usuário" required>
+                <div class="invalid-feedback">Usuário é obrigatório!</div>
+              </div>
+
+              <div class="col">
+                <input type="text" name="senha" id="senha" class="form-control form-control-lg" placeholder="Digite uma senha" required>
+                <div class="invalid-feedback">Senha obrigatório!</div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <input type="submit" value="Atualizar" class="btn btn-success btn-block btn-lg" id="edit-user-btn">
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Edit User Modal End -->
+  <div class="container">
+    <div class="row mt-4">
+      <div class="col-lg-12 d-flex justify-content-between align-items-center">
+        <div>
+          <h4 class="text-primary">Usuários cadastrados!</h4>
+        </div>
+        <div>
+          <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addNewUserModal">Adicionar Novo Usuário</button>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-lg-12">
+        <div id="showAlert"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered text-center">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Senha</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>
