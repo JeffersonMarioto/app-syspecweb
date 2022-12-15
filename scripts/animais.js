@@ -63,7 +63,7 @@ const editUser = async (id) => {
   document.getElementById("descricao").value = response.descricao;
   document.getElementById("data").value = response.data;
   document.getElementById("propriedade").value = response.propriedade;
-  document.getElementById("sexo").value = response.phone;
+  document.getElementById("sexo").value = response.sexo;
 };
 
 // Update User Ajax Request
@@ -88,7 +88,7 @@ updateForm.addEventListener("submit", async (e) => {
     const response = await data.text();
 
     showAlert.innerHTML = response;
-    document.getElementById("edit-user-btn").value = "Add Animal";
+    document.getElementById("edit-user-btn").value = "Update";
     updateForm.reset();
     updateForm.classList.remove("was-validated");
     editModal.hide();
