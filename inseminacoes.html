@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Syspec - Pesagem</title>
+    <title>Syspec - Inseminações</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
     <link rel="canonical" href="https://html5-templates.com/demo/amp/">
@@ -65,7 +65,7 @@ body{background-color: #FFFFFF;font-family: Arial, Helvetica, sans-serif;padding
   <body>
     <header class="headerbar">
       <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
-      <a href="painel.php">Pesagem</a>
+      <a href="painel.php">Inseminações</a>
     </header>
     <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
       <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
@@ -79,60 +79,48 @@ body{background-color: #FFFFFF;font-family: Arial, Helvetica, sans-serif;padding
         <li><a href="ajuda.html">Ajuda</a></li>
       </ul>
     </amp-sidebar>
-  <!-- Add New Pesagem Modal Start -->
+  <!-- Add New Animal Modal Start -->
   <div class="modal fade" tabindex="-1" id="addNewUserModal">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Add Nova Pesagem</h5>
+          <h5 class="modal-title">Add Nova Inseminação</h5>
           <button type="button" class="btn-close" data-dismiss="modal" aria-label="Fechar"></button>
         </div>
         <div class="modal-body">
           <form id="add-user-form" class="p-2" novalidate>
             <div class="row mb-3 gx-3">
+              <div class="col">
+                <input type="text" name="vaca" class="form-control form-control-lg" placeholder="Vaca" required>
+                <div class="invalid-feedback">Campo obrigatório!</div>
+              </div>
 
-            <div class="mb-3">
-              <input type="text" name="numero" class="form-control form-control-lg" placeholder="Número" required>
-              <div class="invalid-feedback">Campo obrigatório!</div>
-            </div>
-
-            <div class="mb-3">
-              <input type="date" name="data_atual" id="data_atual" class="form-control form-control-lg" placeholder="Data" required>
-              <div class="invalid-feedback">Campo obrigatório!</div>
-            </div>
-
-              <div class="mb3">
-                <input type="text" name="peso_atual" id="peso_atual" class="form-control form-control-lg" placeholder="Peso atual" required>
+              <div class="col">
+                <input type="text" name="touro" class="form-control form-control-lg" placeholder="Touro" required>
                 <div class="invalid-feedback">Campo obrigatório!</div>
               </div>
             </div>
 
             <div class="mb-3">
-              <input type="hidden" name="peso_anterior" id="peso_anterior" class="form-control form-control-lg" placeholder="Peso anterior" >
+              <input type="date" name="data_inseminacao" class="form-control form-control-lg" placeholder="Data Inseminação!" required>
+              <div class="invalid-feedback">Campo obrigatório!</div>
             </div>
 
             <div class="mb-3">
-              <input type="hidden" name="data_anterior" id="data_anterior" class="form-control form-control-lg" placeholder="Data anterior" >
+              <input type="text" name="estacao" class="form-control form-control-lg" placeholder=" Ano Estação" required>
+              <div class="invalid-feedback">Campo obrigatório!</div>
             </div>
 
             <div class="mb-3">
-              <input type="hidden" name="resultado" id="resultado" class="form-control form-control-lg" placeholder="Resultado" >
-            </div>
-
-            <div class="mb-3">
-              <input type="hidden" name="idade" id="idade" class="form-control form-control-lg" placeholder="Idade em meses" >
-            </div>
-
-            <div class="mb-3">
-              <input type="radio" id="era" name="era" value="outros" required>
-              <label for="adulto">Outros</label>
-              <input type="radio" id="era" name="era" value="bezerro">
-              <label for="bezerro">Bezerro</label></p>
+              <input type="radio" id="diagnostico" name="diagnostico" value="prenha" required>
+              <label for="prenha">Prenha</label>
+              <input type="radio" id="diagnostico" name="diagnostico" value="vazia">
+              <label for="vazia">Vazia</label></p>
               <div class="invalid-feedback">Campo obrigatório!!</div>
             </div>
 
             <div class="mb-3">
-              <input type="submit" value="Add Pesagem" class="btn btn-primary btn-block btn-lg" id="add-user-btn">
+              <input type="submit" value="Add" class="btn btn-primary btn-block btn-lg" id="add-user-btn">
             </div>
           </form>
         </div>
@@ -141,71 +129,50 @@ body{background-color: #FFFFFF;font-family: Arial, Helvetica, sans-serif;padding
   </div>
   <!-- Add New User Modal End -->
 
-  <!-- Edit Pesagem Modal Start -->
+  <!-- Edit User Modal Start -->
   <div class="modal fade" tabindex="-1" id="editUserModal">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Edit This Pesagem</h5>
-          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+          <h5 class="modal-title">Editar</h5>
+          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Fechar"></button>
         </div>
         <div class="modal-body">
           <form id="edit-user-form" class="p-2" novalidate>
-
-            <input type="hidden" name="idp" id="idp">
-
+            <input type="hidden" name="idi" id="idi">
             <div class="row mb-3 gx-3">
-
-              <div class="mb-3">
-                <input type="text" name="numero" id="numero" class="form-control form-control-lg" placeholder="Número " required>
-                <div class="invalid-feedback">Campo Obrigatório!</div>
+              <div class="col">
+                <input type="text" name="vaca" id="vaca" class="form-control form-control-lg" placeholder="Vaca" required>
+                <div class="invalid-feedback">Campo obrigatório!</div>
               </div>
 
-              <div class="mb-3">
-                <input type="date" name="data_atual" id="data_atual" class="form-control form-control-lg" required>
-                <div class="invalid-feedback">Campo Obrigatório!</div>
+              <div class="col">
+                <input type="text" name="touro" id="touro" class="form-control form-control-lg" placeholder="Touro" required>
+                <div class="invalid-feedback">Campo obrigatório!</div>
               </div>
             </div>
 
             <div class="mb-3">
-              <input type="number" name="peso_atual" id="peso_atual" class="form-control form-control-lg" placeholder="Peso Atual" required>
-              <div class="invalid-feedback">Campo Obrigatório!</div>
+              <input type="date" name="data_inseminacao" id="data_inseminacao" class="form-control form-control-lg" placeholder="Data Inseminação" required>
+              <div class="invalid-feedback">Campo obrigatório!</div>
             </div>
 
             <div class="mb-3">
-              <input type="text" name="peso_anterior" id="peso_anterior" class="form-control form-control-lg" placeholder="Peso Anterior" required>
-              <div class="invalid-feedback">Campo Obrigatório!</div>
+              <input type="text" name="estacao" id="estacao" class="form-control form-control-lg" placeholder="Propriedade" required>
+              <div class="invalid-feedback">Campo obrigatório!!</div>
             </div>
 
             <div class="mb-3">
-              <input type="date" name="data_anterior" id="data_anterior" class="form-control form-control-lg" required>
-              <div class="invalid-feedback">Campo Obrigatório!</div>
-            </div>
-
-            <div class="mb-3">
-              <input type="text" name="resultado" id="resultado" class="form-control form-control-lg" placeholder="Resultado" required>
-              <div class="invalid-feedback">Campo Obrigatório!</div>
-            </div>
-
-            <div class="mb-3">
-              <input type="text" name="media" id="media" class="form-control form-control-lg" placeholder="Média" required>
-              <div class="invalid-feedback">Campo Obrigatório!</div>
-            </div>
-
-            <div class="mb-3">
-              <input type="text" name="idade" id="idade" class="form-control form-control-lg" placeholder="Idade" required>
-              <div class="invalid-feedback">Campo Obrigatório!</div>
-            </div>
-
-            <div class="mb-3">
-              <input type="text" name="era" id="era" class="form-control form-control-lg" placeholder="Era" required>
-              <div class="invalid-feedback">Campo Obrigatório!</div>
+              <input type="radio" id="diagnostico" name="diagnostico" value="prenha" required>
+              <label for="prenha">Prenha</label>
+              <input type="radio" id="diagnostico" name="diagnostico" value="vazia">
+              <label for="vazia">Vazia</label></p>
+              <div class="invalid-feedback">Campo obrigatório!!</div>
             </div>
 
             <div class="mb-3">
               <input type="submit" value="Update" class="btn btn-success btn-block btn-lg" id="edit-user-btn">
             </div>
-
           </form>
         </div>
       </div>
@@ -216,10 +183,10 @@ body{background-color: #FFFFFF;font-family: Arial, Helvetica, sans-serif;padding
     <div class="row mt-4">
       <div class="col-lg-12 d-flex justify-content-between align-items-center">
         <div>
-          <h4 class="text-primary">Pesagens registradas!</h4>
+          <h4 class="text-primary">Inseminações cadastradas!</h4>
         </div>
         <div>
-          <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addNewUserModal">Add Pesagem</button>
+          <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addNewUserModal">Add</button>
         </div>
       </div>
     </div>
@@ -236,15 +203,12 @@ body{background-color: #FFFFFF;font-family: Arial, Helvetica, sans-serif;padding
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Brinco</th>
-                <th>Data Atual</th>
-                <th>Peso Atual</th>
-                <th>Peso Ant.</th>
-                <th>Data Ant.</th>
-                <th>Resultado</th>
-                <th>Média</th>
-                <th>Idade</th>
-                <th>Era</th>
+                <th>Vaca</th>
+                <th>Touro</th>
+                <th>Data Inseminação</th>
+                <th>Estação</th>
+                <th>Diagnóstico</th>
+                <th>Prev. Parto</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -255,7 +219,7 @@ body{background-color: #FFFFFF;font-family: Arial, Helvetica, sans-serif;padding
       </div>
     </div>
   </div>
-  <script src="scripts/pesagem.js"></script>
+  <script src="scripts/inseminacao.js"></script>
 </body>
 
 </html>
