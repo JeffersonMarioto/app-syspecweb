@@ -69,7 +69,7 @@ body{background-color: #FFFFFF;font-family: Arial, Helvetica, sans-serif;padding
   <body>
     <header class="headerbar">
       <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
-      <a href="index.html">Sistema para Pecuária</a>
+      <a href="painel.php">Sistema para Pecuária</a>
     </header>
     <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
       <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
@@ -78,8 +78,6 @@ body{background-color: #FFFFFF;font-family: Arial, Helvetica, sans-serif;padding
         <li><a href="pesagem.html">Pesagens</a></li>
         <li><a href="inseminacoes.html">Inseminações</a></li>
         <li><a href="sanitario.html">Sanitário</a></li>
-        <li><a href="medicacoes.html">Medicações</a></li>
-        <li><a href="minerais_racoes.html">Minerais & Rações</a></li>
         <li><a href="consultas.html">Consultas</a></li>
         <li><a href="usuario.html">Usuário</a></li>
         <li><a href="ajuda.html">Ajuda</a></li>
