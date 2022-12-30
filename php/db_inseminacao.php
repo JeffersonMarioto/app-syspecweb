@@ -22,7 +22,7 @@
         'data_inseminacao' => $data_inseminacao,
         'estacao' => $estacao,
         'diagnostico' => $diagnostico,
-        'parto' => $parto.format('Y-m-d')
+        'parto' => $parto
       ]);
       return true;
     }

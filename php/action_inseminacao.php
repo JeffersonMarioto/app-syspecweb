@@ -9,6 +9,8 @@
   // Handle Add New Ins Ajax Request
   if (isset($_POST['add'])) {
     $vaca = $util->testInput($_POST['vaca']);
+    $numero_sem_zeros = ltrim($vaca, '0');
+    $vaca = $numero_sem_zeros;    
     $touro = $util->testInput($_POST['touro']);
     $data_inseminacao = $util->testInput($_POST['data_inseminacao']);
     $estacao = $util->testInput($_POST['estacao']);
@@ -61,6 +63,8 @@
   if (isset($_POST['update'])) {
     $idi = $util->testInput($_POST['idi']);
     $vaca = $util->testInput($_POST['vaca']);
+    $numero_sem_zeros = ltrim($vaca, '0');
+    $vaca = $numero_sem_zeros;    
     $touro = $util->testInput($_POST['touro']);
     $data_inseminacao = $util->testInput($_POST['data_inseminacao']);
     $estacao = $util->testInput($_POST['estacao']);

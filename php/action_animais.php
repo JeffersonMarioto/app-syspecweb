@@ -9,6 +9,8 @@
   // Handle Add New User Ajax Request
   if (isset($_POST['add'])) {
     $numero = $util->testInput($_POST['numero']);
+    $numero_sem_zeros = ltrim($numero, '0');
+    $numero = $numero_sem_zeros;
     $descricao = $util->testInput($_POST['descricao']);
     $data = $util->testInput($_POST['data']);
     $propriedade = $util->testInput($_POST['propriedade']);
@@ -60,6 +62,8 @@
   if (isset($_POST['update'])) {
     $id = $util->testInput($_POST['id']);
     $numero = $util->testInput($_POST['numero']);
+    $numero_sem_zeros = ltrim($numero, '0');
+    $numero = $numero_sem_zeros;
     $descricao = $util->testInput($_POST['descricao']);
     $data = $util->testInput($_POST['data']);
     $propriedade = $util->testInput($_POST['propriedade']);
