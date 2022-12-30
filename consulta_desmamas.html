@@ -6,7 +6,7 @@ include('verifica_login.php');
 
   <head>
     <meta charset="utf-8">
-    <title>Syspec - Inseminações</title>
+    <title>Syspec - Consulta de desmamas</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"></script>
     <link rel="canonical" href="https://html5-templates.com/demo/amp/">
@@ -68,7 +68,7 @@ body{background-color: #FFFFFF;font-family: Arial, Helvetica, sans-serif;padding
   <body>
     <header class="headerbar">
       <div role="button" on="tap:sidebar1.toggle" tabindex="0" class="hamburger">☰</div>
-      <a href="painel.php">Inseminações</a>
+      <a href="painel.php">Consulta de animais</a>
     </header>
     <amp-sidebar id="sidebar1" layout="nodisplay" side="left">
       <div role="button" aria-label="close sidebar" on="tap:sidebar1.toggle" tabindex="0" class="close-sidebar">✕</div>
@@ -77,7 +77,7 @@ body{background-color: #FFFFFF;font-family: Arial, Helvetica, sans-serif;padding
         <li><a href="pesagem.html">Pesagens</a></li>
         <li><a href="inseminacoes.html">Inseminações</a></li>
         <li><a href="sanitario.html">Sanitário</a></li>
-         <li><a href="consultas.html">Consultas</a></li>
+        <li><a href="consultas.html">Consultas</a></li>
         <ul>
                   <li><a href="consulta_animal.html">Consulta Animal</a></li>
                   <li><a href="consulta_partos.html">Consulta Partos</a></li>
@@ -90,114 +90,14 @@ body{background-color: #FFFFFF;font-family: Arial, Helvetica, sans-serif;padding
         <li><a href="ajuda.html">Ajuda</a></li>
       </ul>
     </amp-sidebar>
-  <!-- Add New Animal Modal Start -->
-  <div class="modal fade" tabindex="-1" id="addNewUserModal">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Add Nova Inseminação</h5>
-          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Fechar"></button>
-        </div>
-        <div class="modal-body">
-          <form id="add-user-form" class="p-2" novalidate>
-            <div class="row mb-3 gx-3">
-              <div class="col">
-                <input type="text" name="vaca" class="form-control form-control-lg" placeholder="Vaca" required>
-                <div class="invalid-feedback">Campo obrigatório!</div>
-              </div>
 
-              <div class="col">
-                <input type="text" name="touro" class="form-control form-control-lg" placeholder="Touro" required>
-                <div class="invalid-feedback">Campo obrigatório!</div>
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <input type="date" name="data_inseminacao" class="form-control form-control-lg" placeholder="Data Inseminação!" required>
-              <div class="invalid-feedback">Campo obrigatório!</div>
-            </div>
-
-            <div class="mb-3">
-              <input type="text" name="estacao" class="form-control form-control-lg" placeholder=" Ano Estação" required>
-              <div class="invalid-feedback">Campo obrigatório!</div>
-            </div>
-
-            <div class="mb-3">
-              <input type="radio" id="diagnostico" name="diagnostico" value="prenha" required>
-              <label for="prenha">Prenha</label>
-              <input type="radio" id="diagnostico" name="diagnostico" value="vazia">
-              <label for="vazia">Vazia</label></p>
-              <div class="invalid-feedback">Campo obrigatório!!</div>
-            </div>
-
-            <div class="mb-3">
-              <input type="submit" value="Add" class="btn btn-primary btn-block btn-lg" id="add-user-btn">
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Add New User Modal End -->
-
-  <!-- Edit User Modal Start -->
-  <div class="modal fade" tabindex="-1" id="editUserModal">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Editar</h5>
-          <button type="button" class="btn-close" data-dismiss="modal" aria-label="Fechar"></button>
-        </div>
-        <div class="modal-body">
-          <form id="edit-user-form" class="p-2" novalidate>
-            <input type="hidden" name="idi" id="idi">
-            <div class="row mb-3 gx-3">
-              <div class="col">
-                <input type="text" name="vaca" id="vaca" class="form-control form-control-lg" placeholder="Vaca" required>
-                <div class="invalid-feedback">Campo obrigatório!</div>
-              </div>
-
-              <div class="col">
-                <input type="text" name="touro" id="touro" class="form-control form-control-lg" placeholder="Touro" required>
-                <div class="invalid-feedback">Campo obrigatório!</div>
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <input type="date" name="data_inseminacao" id="data_inseminacao" class="form-control form-control-lg" placeholder="Data Inseminação" required>
-              <div class="invalid-feedback">Campo obrigatório!</div>
-            </div>
-
-            <div class="mb-3">
-              <input type="text" name="estacao" id="estacao" class="form-control form-control-lg" placeholder="Propriedade" required>
-              <div class="invalid-feedback">Campo obrigatório!!</div>
-            </div>
-
-            <div class="mb-3">
-              <input type="radio" id="diagnostico" name="diagnostico" value="prenha" required>
-              <label for="prenha">Prenha</label>
-              <input type="radio" id="diagnostico" name="diagnostico" value="vazia">
-              <label for="vazia">Vazia</label></p>
-              <div class="invalid-feedback">Campo obrigatório!!</div>
-            </div>
-
-            <div class="mb-3">
-              <input type="submit" value="Update" class="btn btn-success btn-block btn-lg" id="edit-user-btn">
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Edit User Modal End -->
   <div class="container">
     <div class="row mt-4">
       <div class="col-lg-12 d-flex justify-content-between align-items-center">
         <div>
-          <h4 class="text-primary">Inseminações cadastradas!</h4>
+          <h4 class="text-primary">Animais com mais de 6 meses e menos de 1 ano:</h4>
         </div>
         <div>
-          <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addNewUserModal">Add</button>
         </div>
       </div>
     </div>
@@ -209,18 +109,21 @@ body{background-color: #FFFFFF;font-family: Arial, Helvetica, sans-serif;padding
     </div>
     <div class="row">
       <div class="col-lg-12">
+        <div id="showAlert"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
         <div class="table-responsive">
           <table class="table table-striped table-bordered text-center">
             <thead>
               <tr>
-                <th>ID</th>
-                <th>Vaca</th>
-                <th>Touro</th>
-                <th>Data Inseminação</th>
-                <th>Estação</th>
-                <th>Diagnóstico</th>
-                <th>Prev. Parto</th>
-                <th>Action</th>
+                <th>Contador</th>
+                <th>Número</th>
+                <th>Data nascimento</th>
+                <th>Idade</th>
+                <th>Sexo</th>
+                <th>U. Pesagem</th>
               </tr>
             </thead>
             <tbody>
@@ -230,7 +133,7 @@ body{background-color: #FFFFFF;font-family: Arial, Helvetica, sans-serif;padding
       </div>
     </div>
   </div>
-  <script src="scripts/inseminacao.js"></script>
+  <script src="scripts/consulta_desmamas.js"></script>
 </body>
 
 </html>
