@@ -1,10 +1,10 @@
 <?php
   
   class Config {
-    const DBHOST = 'localhost';
-    const DBUSER = 'root';
-    const DBPASS = '';
-    const DBNAME = 'login';
+    const DBHOST = 'us-cdbr-east-06.cleardb.net';
+    const DBUSER = 'bb5a7d8e29efca';
+    const DBPASS = '9da1d24d';
+    const DBNAME = 'heroku_302e836d67b7647';
 
 
 
