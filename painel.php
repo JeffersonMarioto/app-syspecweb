@@ -10,6 +10,7 @@ include('verifica_login.php');
   <head>
     <meta charset="utf-8">
     <title>Syspec - Sistema para Pecuária</title>
+    <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon" />
     <link rel="canonical" href="https://html5-templates.com/demo/amp/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 	<script type="application/ld+json">
