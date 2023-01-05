@@ -15,7 +15,7 @@
       $stmt->execute(['numero' => $numero]);
       $result = $stmt->fetch();
       $data = $result['data'];
-      $d1 = new DateTime('now');
+      $d1 = new DateTime($data_atual);
       $d2 = new DateTime($data);
       $intervalo = $d1->diff( $d2 );
       $ano = $intervalo->y;
