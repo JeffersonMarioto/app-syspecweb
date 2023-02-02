@@ -23,7 +23,7 @@
       $result = $stmt->fetchAll();
       foreach ($result as $row) {
         $count++;
-        if($row['diagnostico'] == "prenha"){
+        if($row['diagnostico'] == "prenha" || $row['diagnostico'] == "prenhe"){
           $count_prenhas++;
         }else{
           $count_vazias++;
@@ -64,7 +64,7 @@
       $result = $stmt->fetchAll();
       foreach ($result as $row) {
         $count++;
-        if($row['diagnostico'] == "prenha"){
+        if($row['diagnostico'] == "prenha" || $row['diagnostico'] == "prenhe"){
           $count_prenhas++;
         }else{
           $count_vazias++;
